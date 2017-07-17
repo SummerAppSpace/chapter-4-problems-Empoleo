@@ -33,8 +33,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 from astroML.datasets import fetch_sdss_specgals
-global incval
-incval=1
 def imgcode(projection):
             print(incval)
             """
@@ -69,8 +67,7 @@ def imgcode(projection):
                         cb.set_label('redshift')
 
 
-                        plt.savefig("Problem1_SDSS"+str(incval)+".png")
-                        incval+=1
+                        plt.savefig("Problem1_SDSS"+str(projection)+".png")
             except AssertionError as e:
                         print("the exception was",e)
                         print("still working on it")
