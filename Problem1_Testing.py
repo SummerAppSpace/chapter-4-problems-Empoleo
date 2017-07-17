@@ -35,6 +35,7 @@ from matplotlib import pyplot as plt
 from astroML.datasets import fetch_sdss_specgals
 incval=1
 def imgcode(projection):
+            print(incval)
             """
             hammer, aitoff, mollweide, lambert
             """
