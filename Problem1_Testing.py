@@ -67,7 +67,7 @@ def imgcode(projection):
                         cb.set_label('redshift')
 
 
-                        plt.savefig("Problem1_SDSS"+incval+".png")
+                        plt.savefig("Problem1_SDSS"+str(incval)+".png")
                         incval+=1
             except AssertionError as e:
                         print("the exception was",e)
