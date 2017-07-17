@@ -33,7 +33,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 from astroML.datasets import fetch_sdss_specgals
-
+incval=0
 def imgcode(projection):
             """
             hammer, aitoff, mollweide, lambert
@@ -67,7 +67,8 @@ def imgcode(projection):
 
 
 
-                        plt.savefig("Problem1_SDSS.png")
+                        plt.savefig("Problem1_SDSS"+incval+".png")
+                        incval+=1
             except:
                         print("still working on it")
 
