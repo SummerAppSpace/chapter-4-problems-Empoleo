@@ -35,9 +35,9 @@ from matplotlib import pyplot as plt
 from astroML.datasets import fetch_sdss_specgals
 
 def imgcode(projection):
-"""
-hammer, aitoff, mollweide, lambert
-"""
+            """
+            hammer, aitoff, mollweide, lambert
+            """
             try:
                         data = fetch_sdss_specgals()
 
