@@ -34,32 +34,35 @@ from matplotlib import pyplot as plt
 
 from astroML.datasets import fetch_sdss_specgals
 
-data = fetch_sdss_specgals()
+try:
+            data = fetch_sdss_specgals()
 
-#------------------------------------------------------------
-# plot the RA/DEC in an area-preserving projection
+            #------------------------------------------------------------
+            # plot the RA/DEC in an area-preserving projection
 
-RA = data['ra']
-DEC = data['dec']
+            RA = data['ra']
+            DEC = data['dec']
 
-# convert coordinates to degrees
-RA -= 180
-RA *= np.pi / 180
-DEC *= np.pi / 180
+            # convert coordinates to degrees
+            RA -= 180
+            RA *= np.pi / 180
+            DEC *= np.pi / 180
 
-ax = plt.axes(projection='mollweide')
+            ax = plt.axes(projection='mollweide')
 
-ax = plt.axes()
-ax.grid()
-plt.scatter(RA, DEC, s=1, lw=0, c=data['z'], cmap=plt.cm.copper,
-            vmin=0, vmax=0.4)
+            ax = plt.axes()
+            ax.grid()
+            plt.scatter(RA, DEC, s=1, lw=0, c=data['z'], cmap=plt.cm.copper,
+                        vmin=0, vmax=0.4)
 
-plt.title('SDSS DR8 Spectroscopic Galaxies')
-cb = plt.colorbar(cax=plt.axes([0.05, 0.1, 0.9, 0.05]),
-                  orientation='horizontal',
-                  ticks=np.linspace(0, 0.4, 9))
-cb.set_label('redshift')
+            plt.title('SDSS DR8 Spectroscopic Galaxies')
+            cb = plt.colorbar(cax=plt.axes([0.05, 0.1, 0.9, 0.05]),
+                              orientation='horizontal',
+                              ticks=np.linspace(0, 0.4, 9))
+            cb.set_label('redshift')
 
 
 
-plt.savefig("Problem1_SDSS.png")
+            plt.savefig("Problem1_SDSS.png")
+except:
+            print("still working on it")
