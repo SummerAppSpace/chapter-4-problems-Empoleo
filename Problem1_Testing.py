@@ -66,11 +66,7 @@ def imgcode(projection):
                         cb.set_label('redshift')
 
 
-                        stringvar="Problem1_SDSS"
-                        strinvar+=incval
-                        stringvar+=".png"
-                        print(stringvar)
-                        plt.savefig(stringvar)
+                        plt.savefig("Problem1_SDSS"+inval+".png")
                         incval+=1
             except:
                         print("still working on it")
