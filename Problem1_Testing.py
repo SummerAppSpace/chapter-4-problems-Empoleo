@@ -34,6 +34,7 @@ from matplotlib import pyplot as plt
 
 from astroML.datasets import fetch_sdss_specgals
 incval=1
+print(incval)
 def imgcode(projection):
             print(incval)
             """
