@@ -69,6 +69,7 @@ def imgcode(projection):
                         stringvar="Problem1_SDSS"
                         strinvar+=incval
                         stringvar+=".png"
+                        print(stringvar)
                         plt.savefig(stringvar)
                         incval+=1
             except:
