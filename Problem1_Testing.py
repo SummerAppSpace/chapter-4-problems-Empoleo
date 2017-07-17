@@ -68,7 +68,8 @@ def imgcode(projection):
 
                         plt.savefig("Problem1_SDSS"+incval+".png")
                         incval+=1
-            except:
+            except AssertionError as e:
+                        print("the exception was",e)
                         print("still working on it")
 
 imgcode("hammer")
