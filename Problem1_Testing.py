@@ -37,7 +37,7 @@ def imgcode(projection):
             """
             hammer, aitoff, mollweide, lambert
             """
-            
+            assert projection=="hammer" or projection=="aitoff" or projection=="mollweide" or projection=="lambert"
             try:
                         data = fetch_sdss_specgals()
 
@@ -75,3 +75,4 @@ imgcode("hammer")
 imgcode("aitoff")
 imgcode("mollweide")
 imgcode("lambert")
+imgcode("sillyprojection")
