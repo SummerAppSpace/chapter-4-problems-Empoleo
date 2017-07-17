@@ -71,4 +71,7 @@ hammer, aitoff, mollweide, lambert
             except:
                         print("still working on it")
 
-imgcode(projection)
+imgcode("hammer")
+imgcode("aitoff")
+imgcode("mollweide")
+imgcode("lambert")
