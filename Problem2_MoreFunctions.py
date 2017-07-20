@@ -24,28 +24,28 @@ from astroML.datasets import fetch_dr7_quasar
 # you can set usetex to False.
 from astroML.plotting import setup_text_plots
 setup_text_plots(fontsize=8, usetex=True)
+def plot_quasars(marker=".",markersize=2,lignstyle="none",color="black"):
+    #------------------------------------------------------------
+    # Fetch the quasar data
+    data = fetch_dr7_quasar()
 
-#------------------------------------------------------------
-# Fetch the quasar data
-data = fetch_dr7_quasar()
+    # select the first 10000 points
+    data = data[:10000]
 
-# select the first 10000 points
-data = data[:10000]
+    r = data['mag_r']
+    i = data['mag_i']
+    z = data['redshift']
 
-r = data['mag_r']
-i = data['mag_i']
-z = data['redshift']
+    #------------------------------------------------------------
+    # Plot the quasar data
+    fig, ax = plt.subplots(figsize=(5, 3.75))
+    ax.plot(z, r - i, marker, markersize, linestyle, color)
 
-#------------------------------------------------------------
-# Plot the quasar data
-fig, ax = plt.subplots(figsize=(5, 3.75))
-ax.plot(z, r - i, marker='.', markersize=2, linestyle='none', color='black')
+    ax.set_xlim(0, 5)
+    ax.set_ylim(-0.5, 1.0)
 
-ax.set_xlim(0, 5)
-ax.set_ylim(-0.5, 1.0)
-
-ax.set_xlabel(r'${\rm redshift}$')
-ax.set_ylabel(r'${\rm r-i}$')
-fig.savefig("problem2.png")
+    ax.set_xlabel(r'${\rm redshift}$')
+    ax.set_ylabel(r'${\rm r-i}$')
+    fig.savefig(str(marker)+"_"+str(markersize)+"_"+str(lignstyle)+"_"+color+".png")
 
 
