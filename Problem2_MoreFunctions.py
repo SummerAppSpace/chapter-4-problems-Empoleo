@@ -24,7 +24,7 @@ from astroML.datasets import fetch_dr7_quasar
 # you can set usetex to False.
 from astroML.plotting import setup_text_plots
 setup_text_plots(fontsize=8, usetex=True)
-def plot_quasars(marker=".",markersize=2,lignstyle="none",color="black"):
+def plot_quasars(marker=".",markersize=2,linestyle="none",color="black"):
     #------------------------------------------------------------
     # Fetch the quasar data
     data = fetch_dr7_quasar()
