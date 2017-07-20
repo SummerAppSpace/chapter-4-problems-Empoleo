@@ -45,5 +45,5 @@ def plot_quasars(marker='.', markersize=2, linestyle=1, color='black'):
 
     ax.set_xlabel(r'${\rm redshift}$')
     ax.set_ylabel(r'${\rm r-i}$')
-    fig.savefig(str(marker)+"_"+str(markersize)+"_"+str(lignstyle)+"_"+color+".png")
+    fig.savefig(str(marker)+"_"+str(markersize)+"_"+str(linestyle)+"_"+color+".png")
 plot_quasars()
