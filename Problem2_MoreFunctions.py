@@ -35,7 +35,6 @@ def plot_quasars(marker=".",markersize=2,lignstyle="none",color="black"):
     r = data['mag_r']
     i = data['mag_i']
     z = data['redshift']
-plot_quasars()
     #------------------------------------------------------------
     # Plot the quasar data
     fig, ax = plt.subplots(figsize=(5, 3.75))
@@ -47,5 +46,4 @@ plot_quasars()
     ax.set_xlabel(r'${\rm redshift}$')
     ax.set_ylabel(r'${\rm r-i}$')
     fig.savefig(str(marker)+"_"+str(markersize)+"_"+str(lignstyle)+"_"+color+".png")
-
-
+plot_quasars()
