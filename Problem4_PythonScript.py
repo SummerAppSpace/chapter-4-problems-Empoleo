@@ -36,32 +36,32 @@ setup_text_plots(fontsize=8, usetex=True)
 
 #------------------------------------------------------------
 # First plot an example pixellization
+def probfunct(inputval='Raw WMAP data'):
+            # Prepare the healpix pixels
+            NSIDE = 4
+            m = np.arange(hp.nside2npix(NSIDE))
+            print("number of pixels:", len(m))
 
-# Prepare the healpix pixels
-NSIDE = 4
-m = np.arange(hp.nside2npix(NSIDE))
-print("number of pixels:", len(m))
+            # Plot the pixelization
+            fig = plt.figure(1, figsize=(5, 3.75))
+            hp.mollview(m, nest=True, title="HEALPix Pixels (Mollweide)", fig=1)
 
-# Plot the pixelization
-fig = plt.figure(1, figsize=(5, 3.75))
-hp.mollview(m, nest=True, title="HEALPix Pixels (Mollweide)", fig=1)
+            # remove colorbar: we don't need it for this plot
+            fig.delaxes(fig.axes[1])
 
-# remove colorbar: we don't need it for this plot
-fig.delaxes(fig.axes[1])
+            #------------------------------------------------------------
+            # Next plot the wmap pixellization
+            wmap_unmasked = fetch_wmap_temperatures(masked=False)
 
-#------------------------------------------------------------
-# Next plot the wmap pixellization
-wmap_unmasked = fetch_wmap_temperatures(masked=False)
+            # plot the unmasked map
+            fig = plt.figure(2, figsize=(5, 3.75))
+            hp.mollview(wmap_unmasked, min=-1, max=1, title=inputval,
+                        unit=r'$\Delta$T (mK)', fig=2)
+            fig.axes[1].texts[0].set_fontsize(8)
 
-# plot the unmasked map
-fig = plt.figure(2, figsize=(5, 3.75))
-hp.mollview(wmap_unmasked, min=-1, max=1, title='Raw WMAP data',
-            unit=r'$\Delta$T (mK)', fig=2)
-fig.axes[1].texts[0].set_fontsize(8)
+            fig.savefig("problem4.png")
 
-fig.savefig("problem4.png")
-
-if __name__=='__main__':
-    # your code here
-    pass
+            if __name__=='__main__':
+                # your code here
+                pass
 
