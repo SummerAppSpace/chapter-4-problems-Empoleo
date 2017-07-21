@@ -18,6 +18,7 @@
 #   For more information, see http://astroML.github.com
 #   To report a bug or issue, use the following forum:
 #    https://groups.google.com/forum/#!forum/astroml-general
+import sys
 import numpy as np
 from matplotlib import pyplot as plt
 # warning: due to a bug in healpy, importing it before pylab can cause
@@ -64,4 +65,4 @@ def probfunct(inputval='Raw WMAP data'):
             if __name__=='__main__':
                 # your code here
                 pass
-
+probfunct()
