@@ -38,6 +38,7 @@ setup_text_plots(fontsize=8, usetex=True)
 #------------------------------------------------------------
 # First plot an example pixellization
 def probfunct(inputval='Raw WMAP data'):
+            print(sys.argv)
             # Prepare the healpix pixels
             NSIDE = 4
             m = np.arange(hp.nside2npix(NSIDE))
